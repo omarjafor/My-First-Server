@@ -11,6 +11,12 @@ app.get('/donations', (req, res) => {
     res.send(data);
 })
 
+app.get('/donations/:id', (req, res) => {
+    const id = req.params.id;
+    const donation = data.find(donat => donat.id == id) || {};
+    res.send(donation);
+})
+
 app.get('/data', (req, res) => {
     res.send('More data coming........')
 })
