@@ -13,7 +13,7 @@ app.get('/donations', (req, res) => {
 
 app.get('/donations/:id', (req, res) => {
     const id = req.params.id;
-    const donation = data.find(donat => donat.id == id) || {};
+    const donation = data.find(donat => donat.id === parseInt(id)) || {};
     res.send(donation);
 })
 
